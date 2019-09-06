@@ -21,10 +21,9 @@ namespace Bydoc.Areas.Admin.Controllers
             string name = adminuser.Name;
             string surname = adminuser.Surname;
             //////////
-
-
+            
 
             return View();
         }
-    }
+    }   
 }

@@ -29,7 +29,7 @@ namespace Bydoc.Models.ORM.Entity
             }
         }
 
-        public DateTime DeleteDate { get; set; }
+        public DateTime? DeleteDate { get; set; }
 
 
 
