@@ -15,12 +15,12 @@ namespace Bydoc.Areas.Admin.Controllers
         public ActionResult Index()
         {
             //db'den instance aldık. cookiedeki email ile eşleştirdik. emailden isim ve soyisim bulduk
-            BydocDBContext db = new BydocDBContext();
-            string email = HttpContext.User.Identity.Name;
-            AdminUser adminuser = db.AdminUsers.FirstOrDefault(x => x.EMail == email);
-            string name = adminuser.Name;
-            string surname = adminuser.Surname;
-            //////////
+            //BydocDBContext db = new BydocDBContext();
+            //string email = HttpContext.User.Identity.Name;
+            //AdminUser adminuser = db.AdminUsers.FirstOrDefault(x => x.EMail == email);
+            //string name = adminuser.Name;
+            //string surname = adminuser.Surname;
+            
             
 
             return View();

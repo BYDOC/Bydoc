@@ -1,13 +1,14 @@
 ﻿
 @{
-    ViewBag.Title = "AddCategory";
+    ViewBag.Title = "UpdateCategory";
     Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
-@model Bydoc.Areas.Admin.Models.DTO.CategoryVM
+<h2>UpdateCategory</h2>
+
 <section class="content-header">
     <h1>
-        Add Category
+        Update Category
         <small>Preview</small>
     </h1>
     <ol class="breadcrumb">
@@ -17,15 +18,15 @@
     </ol>
 </section>
 <section class="content">
-    
+
     <div class="row">
-        <div class="col-md-7"> 
+        <div class="col-md-7">
             @Html.Partial("/Areas/Admin/Views/Shared/Partial/FormMessagePartial.cshtml")
-               
-                   
+
+
             @Html.Partial("/Areas/Admin/Views/Category/Partial/CategoryForm.cshtml")
-          
+
         </div>
-        
+
     </div>
 </section>

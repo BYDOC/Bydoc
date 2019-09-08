@@ -1,4 +1,5 @@
-﻿using Bydoc.Models.ORM.Context;
+﻿using Bydoc.Areas.Admin.Models.Attributes;
+using Bydoc.Models.ORM.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,6 +8,7 @@ using System.Web.Mvc;
 
 namespace Bydoc.Areas.Admin.Controllers
 {
+    [LoginControl]
     public class BaseController : Controller
     {
         // GET: Admin/Base

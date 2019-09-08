@@ -13,7 +13,15 @@ namespace Bydoc.Areas.Admin.Controllers
         // GET: Admin/Category
         public ActionResult Index()
         {
-            return View();
+            List<CategoryVM> model = db.Categories.Where(x => x.IsDeleted == false).OrderBy(x => x.DateAdded).Select(x => new CategoryVM()
+            {
+                Name = x.Name,
+                Description = x.Description,
+                ID = x.ID
+            }).ToList();
+
+            
+            return View(model);
         }
 
 
@@ -45,6 +53,61 @@ namespace Bydoc.Areas.Admin.Controllers
                 return View();
             }
             
+        }
+
+
+
+        public ActionResult UpdateCategory(int id)
+        {
+            //önce güncellenecek kategoriyi bulup ekrana yazdırıyoruz
+            if (ModelState.IsValid)
+            {
+
+            }
+            Category category = db.Categories.FirstOrDefault(x => x.ID == id);
+            CategoryVM model = new CategoryVM();
+            model.Name = category.Name;
+            model.Description = category.Description;
+
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateCategory(CategoryVM model)
+        {
+            //güncellenecek kategori yakalanır ve yeni verilerlee update edilir.
+            if (ModelState.IsValid)
+            {
+                Category category = db.Categories.FirstOrDefault(x => x.ID == model.ID);
+                category.Name = model.Name;
+                category.Description = model.Description;
+
+                ViewBag.submitStatus = 1;
+                db.SaveChanges();
+                return View();
+            }
+            else if (true)
+            {
+                ViewBag.submitStatus = 2;
+                return View();
+            }
+            
+        }
+
+
+
+
+
+
+        public JsonResult DeleteCategory(int id)
+        {
+            Category category = db.Categories.FirstOrDefault(x => x.ID == id);
+            category.DeleteDate = DateTime.Now;
+            category.IsDeleted = true;
+
+            db.SaveChanges();
+            return Json("");
+
         }
     }
 }
