@@ -1,0 +1,34 @@
+﻿@model Bydoc.Areas.Admin.Models.DTO.ArticleVM
+<div class="box box-primary">
+
+
+    @using (Html.BeginForm())
+    {
+        <div class="box-body">
+            
+            <div class="form-group">
+                @Html.LabelFor(x => x.Title)
+                @Html.TextBoxFor(x => x.Title, new { @class = "form-control", @placeholder = "Article Name" })
+                @Html.ValidationMessageFor(x => x.Title)
+            </div>
+            <div class="form-group">
+                <label>Categories</label>  
+                 @Html.DropDownList("CategoryID", Model.drpCategories, new { @class="form-control"})
+            </div>
+            
+            <div class="form-group">
+                @Html.LabelFor(x => x.Content)
+                @Html.TextAreaFor(x => x.Content, new { @class = "form-control", @placeholder = "Content" })
+
+            </div>
+
+
+        </div>
+        <div class="box-footer">
+            <button type="submit" class="btn btn-primary">Add</button>
+        </div>
+    }
+
+
+</div>
+
