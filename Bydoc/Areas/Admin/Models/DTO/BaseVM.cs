@@ -9,6 +9,8 @@ namespace Bydoc.Areas.Admin.Models.DTO
     {
         //projede cok fazla View Model olacagı için BASEVM olusturduk.
         public int ID { get; set; }
-        
+
+        public bool? IsDeleted { get; set; }
+
     }
 }

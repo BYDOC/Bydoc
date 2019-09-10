@@ -13,13 +13,12 @@
             </div>
             <div class="form-group">
                 <label>Categories</label>  
-                 @Html.DropDownList("CategoryID", Model.drpCategories, new { @class="form-control"})
+                 @Html.DropDownList("CategoryID", Model.drpCategories,"Select a Category", new { @class="form-control"})
             </div>
             
             <div class="form-group">
-                @Html.LabelFor(x => x.Content)
-                @Html.TextAreaFor(x => x.Content, new { @class = "form-control", @placeholder = "Content" })
-
+                <label>Content</label>
+                @Html.TextArea("ckeditor", new { @class="form-control"})
             </div>
 
 
