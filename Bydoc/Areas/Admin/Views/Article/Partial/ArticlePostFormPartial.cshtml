@@ -1,4 +1,5 @@
 ﻿@model Bydoc.Areas.Admin.Models.DTO.ArticleVM
+<script src="~/Scripts/ckeditor/ckeditor.js"></script>
 <div class="box box-primary">
 
 
@@ -18,7 +19,8 @@
             
             <div class="form-group">
                 <label>Content</label>
-                @Html.TextArea("ckeditor", new { @class="form-control"})
+                @Html.TextAreaFor(x=>x.Content,new { @class="ckeditor"})
+                @*<textarea class="ckeditor" id="ckeditor"></textarea>*@
             </div>
 
 
