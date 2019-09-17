@@ -14,6 +14,8 @@ namespace Bydoc.Areas.Admin.Models.DTO
 
         public int CategoryID { get; set; }
 
+        public string CategoryName { get; set; }
+
         public IEnumerable<SelectListItem> drpCategories { get; set; }
 
         
